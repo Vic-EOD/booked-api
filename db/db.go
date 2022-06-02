@@ -14,8 +14,9 @@ func Connect() *sql.DB {
         User: os.Getenv("DBUSER"),
         Passwd: os.Getenv("DBPASS"),
         Net: "tcp",
-        Addr: "127.0.0.1:3306",
-        DBName: "movie_books",
+        Addr: "booked.cluster-ci9bqbdyabwr.us-west-1.rds.amazonaws.com:3306",
+        DBName: "booked",
+        AllowNativePasswords: true,
     }
 
     var err error
