@@ -15,7 +15,7 @@ func GetWorks(c *gin.Context) {
     var works []models.Work
     db2 = db.Connect();
 
-    rows, err := db2.Query("SELECT * FROM works LIMIT 10")
+    rows, err := db2.Query("SELECT * FROM works ORDER BY RAND() LIMIT 10")
     if err != nil {
         log.Fatalf("GetWorks: %v", err)
     }
